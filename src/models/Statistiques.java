@@ -6,7 +6,7 @@ import services.Mediatheque;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Statistique {
+public class Statistiques {
     private final String nomMediatheque;
     private final int totalMedias;
     private final int nbLivres;
@@ -16,9 +16,9 @@ public class Statistique {
     private final int nbEmpruntes;
     private final int nbMembres;
     private final Genre genreDominant;
-    private final int nbGenreDomimant;
+    private final int nbGenreDominant;
 
-    public Statistique(Mediatheque mediatheque) {
+    public Statistiques(Mediatheque mediatheque) {
         nomMediatheque = mediatheque.getNom();
         totalMedias = mediatheque.listerTous().size();
         nbMembres = mediatheque.listerTous().size();
@@ -61,7 +61,7 @@ public class Statistique {
         }
 
         genreDominant = dominant;
-        nbGenreDomimant = meilleur;
+        nbGenreDominant = meilleur;
 
     }
 
@@ -104,7 +104,7 @@ public class Statistique {
         return genreDominant;
     }
 
-    public int getNbGenreDomimant() {
-        return nbGenreDomimant;
+    public int getNbGenreDominant() {
+        return nbGenreDominant;
     }
 }
