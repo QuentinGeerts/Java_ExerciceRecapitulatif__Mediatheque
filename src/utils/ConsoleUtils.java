@@ -56,7 +56,7 @@ public class ConsoleUtils {
         while (true) {
             System.out.println(message + " (o/n) : ");
             String saisie = sc.nextLine().trim().toLowerCase();
-            if (saisie.equals("o")) {
+            if (saisie.equals("o") || saisie.equals("oui")) {
                 return true;
             }
             if (saisie.equals("n")) {
@@ -151,7 +151,7 @@ public class ConsoleUtils {
 
     public static void afficherListe(List<?> liste) {
         if (liste == null || liste.isEmpty()) {
-            System.out.println("Le liste est vide");
+            System.out.println("La liste est vide");
             return;
         }
 

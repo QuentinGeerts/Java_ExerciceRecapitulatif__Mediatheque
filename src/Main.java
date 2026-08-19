@@ -92,11 +92,18 @@ public class Main {
 
             Media media = switch (type) {
                 case 1 ->
-                        new Livre(titre, annee, genre, ConsoleUtils.lireTexte("Auteur :"), ConsoleUtils.lireEntier("Nombre de pages :"), ConsoleUtils.lireTexte("ISBN :"));
+                        new Livre(titre, annee, genre,
+                                ConsoleUtils.lireTexte("Auteur :"),
+                                ConsoleUtils.lireEntier("Nombre de pages :"),
+                                ConsoleUtils.lireTexte("ISBN :"));
                 case 2 ->
-                        new Dvd(titre, annee, genre, ConsoleUtils.lireTexte("Réalisateur :"), ConsoleUtils.lireEntier("Durée (en minutes) :"));
+                        new Dvd(titre, annee, genre,
+                                ConsoleUtils.lireTexte("Réalisateur :"),
+                                ConsoleUtils.lireEntier("Durée (en minutes) :"));
                 default ->
-                        new JeuVideo(titre, annee, genre, ConsoleUtils.lirePlateforme("Plateforme :"), ConsoleUtils.lireEntier("PEGI (3, 7, 12, 16 ou 18) :"));
+                        new JeuVideo(titre, annee, genre,
+                                ConsoleUtils.lirePlateforme("Plateforme :"),
+                                ConsoleUtils.lireEntier("PEGI (3, 7, 12, 16 ou 18) :"));
             };
 
             if (mediatheque.ajouterMedia(media)) {
@@ -112,7 +119,7 @@ public class Main {
 
     private static void listerCatalogue(Mediatheque mediatheque) {
         ConsoleUtils.afficherTitre("Catalogue");
-        List<Media> catalogue = mediatheque.listerTous();
+        List<Media> catalogue = mediatheque.listerCatalogue();
         System.out.printf("%nIl y a %d média(s) dans le catalogue.%n", catalogue.size());
         ConsoleUtils.afficherListe(catalogue);
     }

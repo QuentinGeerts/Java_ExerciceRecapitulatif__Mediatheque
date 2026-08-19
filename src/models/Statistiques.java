@@ -20,8 +20,8 @@ public class Statistiques {
 
     public Statistiques(Mediatheque mediatheque) {
         nomMediatheque = mediatheque.getNom();
-        totalMedias = mediatheque.listerTous().size();
-        nbMembres = mediatheque.listerTous().size();
+        totalMedias = mediatheque.listerCatalogue().size();
+        nbMembres = mediatheque.listerMembre().size();
 
         int livres = 0;
         int dvd = 0;
@@ -29,7 +29,7 @@ public class Statistiques {
         int disponibles = 0;
         Map<Genre, Integer> parGenre = new HashMap<>();
 
-        for (Media media : mediatheque.listerTous()) {
+        for (Media media : mediatheque.listerCatalogue()) {
             if (media instanceof Livre) livres++;
             else if (media instanceof Dvd) dvd++;
             else if (media instanceof JeuVideo) jeux++;
@@ -44,7 +44,7 @@ public class Statistiques {
         nbLivres = livres;
         nbDvd = dvd;
         nbJeux = jeux;
-        nbDisponibles = mediatheque.listerDisponible().size();
+        nbDisponibles = disponibles;
         nbEmpruntes = totalMedias - nbDisponibles;
 
 
@@ -62,7 +62,6 @@ public class Statistiques {
 
         genreDominant = dominant;
         nbGenreDominant = meilleur;
-
     }
 
     // Getters

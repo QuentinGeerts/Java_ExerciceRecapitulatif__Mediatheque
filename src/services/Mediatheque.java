@@ -73,8 +73,12 @@ public class Mediatheque {
         return catalogue.get(id);
     }
 
-    public List<Media> listerTous() {
+    public List<Media> listerCatalogue() {
         return new ArrayList<>(catalogue.values());
+    }
+
+    public List<Membre> listerMembre() {
+        return new ArrayList<>(membres.values());
     }
 
     public List<Media> rechercher(String motCle) {

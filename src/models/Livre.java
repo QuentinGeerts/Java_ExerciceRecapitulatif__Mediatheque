@@ -32,7 +32,7 @@ public class Livre extends Media {
     }
 
     public void setNbPages(int nbPages) {
-        if (nbPages <= 0) return;
+        if (nbPages <= 0) throw new IllegalArgumentException("Le nombre de page ne peut pas être négatif.");
         this.nbPages = nbPages;
     }
 
